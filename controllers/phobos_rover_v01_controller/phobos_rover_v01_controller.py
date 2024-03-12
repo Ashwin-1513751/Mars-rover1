@@ -8,20 +8,18 @@ context = zmq.Context()
 
 # From loco_ctrl.toml
 gmb_limits = [math.radians(-90), math.radians(90)]
-gmb_motors = ['fl_gimbal', 'ml_gimbal', 'rl_gimbal', 'fr_gimbal', 'mr_gimbal', 'rr_gimbal']
+gmb_motors = ['fl_gimbal', 'rl_gimbal', 'fr_gimbal', 'rr_gimbal']
 
 # From loco_ctrl.toml
 drv_limits = [-3.6458, 3.6458]
-drv_motors = ['fl_drive', 'ml_drive', 'rl_drive', 'fr_drive', 'mr_drive', 'rr_drive']
+drv_motors = ['fl_drive', 'rl_drive', 'fr_drive', 'rr_drive']
 
 # Motor maps from MechDems
 act_id_types = {
     'positional': [
         'StrFL',
-        'StrML',
         'StrRL',
         'StrFR',
-        'StrMR',
         'StrRR',
         'ArmBase',
         'ArmShoulder',
@@ -31,25 +29,19 @@ act_id_types = {
     ],
     'continuous': [
         'DrvFL',
-        'DrvML',
         'DrvRL',
         'DrvFR',
-        'DrvMR',
         'DrvRR'
     ]
 }
 act_id_motor_group_index_map = {
     'DrvFL': 0,
-	'DrvML': 1,
 	'DrvRL': 2,
 	'DrvFR': 3,
-	'DrvMR': 4,
 	'DrvRR': 5,
 	'StrFL': 0,
-	'StrML': 1,
 	'StrRL': 2,
 	'StrFR': 3,
-	'StrMR': 4,
 	'StrRR': 5,
 	'ArmBase': 0,
 	'ArmShoulder': 1,
